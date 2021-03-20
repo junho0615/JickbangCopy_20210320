@@ -10,9 +10,10 @@ import com.neppplus.jickbangcopy_20210320.R
 import com.neppplus.jickbangcopy_20210320.datas.Room
 
 class RoomAdapter(
-    val mContext : Context,
-    val resId : Int,
-    val mList : ArrayList<Room>) : ArrayAdapter<Room>(mContext, resId, mList) {
+    val mContext: Context,
+    val resId: Int,
+    val mList: ArrayList<Room>
+) : ArrayAdapter<Room>(mContext, resId, mList) {
 
     val inflater = LayoutInflater.from(mContext)
 

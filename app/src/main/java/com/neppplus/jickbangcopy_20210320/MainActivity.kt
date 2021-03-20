@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     val mRooms = ArrayList<Room>()
 
-    lateinit var mRoomAdapter : RoomAdapter
+    lateinit var mRoomAdapter: RoomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -4,18 +4,18 @@ import java.text.NumberFormat
 import java.util.*
 
 class Room(
-    val price : Int,
-    val address : String,
-    val floor : Int,
-    val description : String) {
+    val price: Int,
+    val address: String,
+    val floor: Int,
+    val description: String
+) {
 
-    fun getFormattedPrice() : String {
+    fun getFormattedPrice(): String {
 
         if (this.price < 10000) {
             val priceStr = NumberFormat.getNumberInstance(Locale.KOREA).format(this.price)
             return priceStr
-        }
-        else {
+        } else {
             val uk = this.price / 10000
 
             val rest = this.price % 10000
@@ -27,19 +27,16 @@ class Room(
         }
     }
 
-    fun getFormattedFloor() : String {
+    fun getFormattedFloor(): String {
 
         if (this.floor >= 1) {
             return "${this.floor}층"
-        }
-        else if (this.floor == 0) {
+        } else if (this.floor == 0) {
             return "반지하"
-        }
-        else {
+        } else {
             return "지하${-this.floor}층"
         }
     }
-
 
 
 }
