@@ -17,7 +17,7 @@ class RoomAdapter(
     val inflater = LayoutInflater.from(mContext)
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val tempRow = convertView
+        var tempRow = convertView
         if (tempRow == null) {
             tempRow = inflater.inflate(R.layout.room_list_item, null)
         }
@@ -29,6 +29,8 @@ class RoomAdapter(
         val priceTxt = row.findViewById<TextView>(R.id.priceTxt)
         val addressAndFloorTxt = row.findViewById<TextView>(R.id.addressAndFloorTxt)
         val descTxt = row.findViewById<TextView>(R.id.descTxt)
+
+        descTxt.text = data.description
 
 
         return row

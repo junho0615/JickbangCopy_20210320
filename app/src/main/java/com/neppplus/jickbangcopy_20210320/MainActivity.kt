@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.neppplus.jickbangcopy_20210320.Adapters.RoomAdapter
 import com.neppplus.jickbangcopy_20210320.datas.Room
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     val mRooms = ArrayList<Room>()
 
-    lateinit var mRoomAdapter = RoomAdapter
+    lateinit var mRoomAdapter : RoomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         mRoomAdapter = RoomAdapter(this, R.layout.room_list_item, mRooms)
 
-        roomlistview.adapter = mRoomAdapter
+        roomListView.adapter = mRoomAdapter
 
     }
 }
