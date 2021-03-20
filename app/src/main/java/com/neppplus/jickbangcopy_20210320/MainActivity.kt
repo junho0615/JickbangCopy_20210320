@@ -2,11 +2,15 @@ package com.neppplus.jickbangcopy_20210320
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import com.neppplus.jickbangcopy_20210320.Adapters.RoomAdapter
 import com.neppplus.jickbangcopy_20210320.datas.Room
 
 class MainActivity : AppCompatActivity() {
 
     val mRooms = ArrayList<Room>()
+
+    lateinit var mRoomAdapter = RoomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +27,9 @@ class MainActivity : AppCompatActivity() {
         mRooms.add(Room(9900, "서울시 용산구", -2, "용산구 방입니다."))
         mRooms.add(Room(10000, "서울시 동대문구", 1, "동대문구 방입니다."))
 
+        mRoomAdapter = RoomAdapter(this, R.layout.room_list_item, mRooms)
+
+        roomlistview.adapter = mRoomAdapter
 
     }
 }
